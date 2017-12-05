@@ -1,0 +1,186 @@
+﻿<Page
+    x:Class="KeePassW10.Views.EntryDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KeePassW10.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{StaticResource DatabaseViewModel}"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="_share" x:Uid="EntryDetail_AppBarButton_Share" Click="ShareAppButton_Click">
+                <AppBarButton.Icon>
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical" Margin="15,0,15,10">
+
+                <Grid MinHeight="120">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- Entry icon -->
+                    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="{Binding CurrentEntry.Icon}" Width="30" Height="30"
+                                               HorizontalAlignment="Left" 
+                                               VerticalAlignment="Center"
+                                               Margin="10,0,10,0"/>
+
+                    <!-- -->
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,00" 
+                       Style="{StaticResource SubheaderTextBlockStyle}"
+                       TextWrapping="Wrap" Text="{Binding CurrentEntry.Title}" VerticalAlignment="Center"
+                           TextAlignment="Left" 
+                           />
+
+                        <!--<Button Grid.Column="1" 
+                                HorizontalAlignment="Right" VerticalAlignment="Top"
+                                Style="{StaticResource TextBlockButtonStyle}">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE72D;"/>
+                        </Button>-->
+
+                </Grid>
+
+                <Border BorderThickness="0.5" HorizontalAlignment="Stretch" BorderBrush="LightGray" Margin="0,0,0,20"/>
+
+                <!-- Username -->
+                <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" 
+                           Style="{StaticResource SubtitleTextBlockStyle}"
+                           x:Uid="EntryDetail_UserName"
+                           Text="_Username" VerticalAlignment="Top"/>
+                
+                
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,10,0,0" TextWrapping="Wrap" 
+                     Text="{Binding CurrentEntry.Username}" IsReadOnly="True"
+                     />
+                    <Button Grid.Column="1" 
+                            x:Uid="EntryDetail_Copy_Button"
+                            Content="_Copy" 
+                            Command="{Binding CurrentEntry.CopyUsernameCommand}" Margin="5,10,0,0"/>
+                </Grid>
+
+                <!-- Password -->
+
+                <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" TextWrapping="Wrap" 
+                       Style="{StaticResource SubtitleTextBlockStyle}"
+                       x:Uid="EntryDetail_Password"
+                       Text="_Password" VerticalAlignment="Top"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox  Grid.Column="0" HorizontalAlignment="Stretch" x:Name="PaswordTextBox" Margin="0,10,0,0" 
+                     Text="{Binding CurrentEntry.PasswordTextIfShown}" IsReadOnly="True"
+                     />
+                    <Button Grid.Column="1" HorizontalAlignment="Right" 
+                            x:Uid="EntryDetail_Copy_Button"
+                            Content="_Copy"
+                            Command="{Binding CurrentEntry.CopyPasswordCommand}" Margin="5,10,0,0"/>
+                </Grid>
+                <CheckBox 
+                    x:Uid="EntryDetail_ShowPassword_Button"
+                    Content="_Show password" 
+                    IsChecked="{Binding Path=CurrentEntry.ShowPassword, Mode=TwoWay}" Margin="0,5,0,0"/>
+
+                <!-- Url -->
+                <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" TextWrapping="Wrap" 
+                       Style="{StaticResource SubtitleTextBlockStyle}"
+                           x:Uid="EntryDetail_URL"
+                       Text="_URL" VerticalAlignment="Top"
+                       Visibility="{Binding Path=CurrentEntry.HasUrl, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       />
+                <Grid Visibility="{Binding Path=CurrentEntry.HasUrl, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <HyperlinkButton HorizontalAlignment="Left" Margin="0,0,0,0" 
+                     Content="{Binding CurrentEntry.Url}" 
+                             Click="HyperlinkButton_Click"
+                    />
+                    
+                    <Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"
+                            x:Uid="EntryDetail_Copy_Button"
+                            Content="_Copy"
+                            Command="{Binding CurrentEntry.CopyUrlCommand}" Margin="5,0,0,0"/>
+                </Grid>
+
+                
+                
+
+                <!-- Notes -->
+                <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" TextWrapping="Wrap" 
+                       Style="{StaticResource SubtitleTextBlockStyle}"
+                           x:Uid="EntryDetail_Notes"
+                       Text="_Notes" VerticalAlignment="Top"
+                       Visibility="{Binding Path=CurrentEntry.HasNotes, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       />
+                <TextBox Text="{Binding CurrentEntry.Notes}" TextWrapping="Wrap" 
+                         HorizontalAlignment="Stretch" IsReadOnly="True" Margin="0,10,0,0"
+                         Visibility="{Binding Path=CurrentEntry.HasNotes, Converter={StaticResource BooleanToVisibilityConverter}}"
+                         />
+
+                <!-- Custom Fields -->
+                <ItemsControl 
+                    Margin="0,-10,0,0"
+                    ItemsSource="{Binding CurrentEntry.CustomFields}"
+                    Visibility="{Binding Path=CurrentEntry.HasCustomFields, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                    >
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="{Binding Path=Key}" Margin="0,20,0,0" Style="{StaticResource SubtitleTextBlockStyle}" 
+                                           HorizontalAlignment="Stretch" TextWrapping="Wrap"/>
+                                <TextBox Grid.Row="1" Text="{Binding Path=Value}"
+                                         HorizontalAlignment="Stretch" Margin="0,10,0,0"
+                                         TextWrapping="Wrap" IsReadOnly="True"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <!-- Dates -->
+                <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" TextWrapping="Wrap" 
+                           Style="{StaticResource SubtitleTextBlockStyle}"
+                           x:Uid="EntryDetail_ModificationTime"
+                           Text="_Last modification time" VerticalAlignment="Top"/>
+
+                <TextBlock HorizontalAlignment="Left" Margin="0,0,0,20" TextWrapping="Wrap" 
+                           Style="{StaticResource BodyTextBlockStyle}"
+                           Text="{Binding CurrentEntry.LastModificationDate}" VerticalAlignment="Top"
+                           FontWeight="Light"
+                       />
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

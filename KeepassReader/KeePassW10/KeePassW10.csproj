@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{3DF99AAB-3BF1-4F90-93A5-CB261C9926CC}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KeePassW10</RootNamespace>
+    <AssemblyName>KeePassW10</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>KeePassW10_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>E040C90F10E0F053EC106104C7708552D2FD72BD</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="KeePassW10_StoreKey.pfx" />
+    <None Include="project.json" />
+    <PRIResource Include="Strings\ru-RU\Resources.resw" />
+    <PRIResource Include="Strings\tr-TR\Resources.resw" />
+    <PRIResource Include="Strings\de-DE\Resources.resw" />
+    <PRIResource Include="Strings\fr-FR\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FilteredObservableCollection.cs" />
+    <Compile Include="Common\NavigationService.cs" />
+    <Compile Include="Common\PasswordParameter.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\NegateBooleanConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IconManager.cs" />
+    <Compile Include="Services\NotifyTaskCompletion.cs" />
+    <Compile Include="Services\DatabasePasswordProvider.cs" />
+    <Compile Include="ViewModels\ClipboardViewModel.cs" />
+    <Compile Include="ViewModels\DatabaseViewModel.cs" />
+    <Compile Include="ViewModels\PasswordDialogViewModel.cs" />
+    <Compile Include="ViewModels\PwEntryViewModel.cs" />
+    <Compile Include="ViewModels\PwGroupViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntryCollectionPage.xaml.cs">
+      <DependentUpon>EntryCollectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntryCollectionTreeViewPage.xaml.cs">
+      <DependentUpon>EntryCollectionTreeViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntryDetailPage.xaml.cs">
+      <DependentUpon>EntryDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PasswordDialog.xaml.cs">
+      <DependentUpon>PasswordDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RootPage.xaml.cs">
+      <DependentUpon>RootPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="KeePassW10_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\EntryIcons\C00_Password.png" />
+    <Content Include="Assets\EntryIcons\C01_Package_Network.png" />
+    <Content Include="Assets\EntryIcons\C02_MessageBox_Warning.png" />
+    <Content Include="Assets\EntryIcons\C03_Server.png" />
+    <Content Include="Assets\EntryIcons\C04_Klipper.png" />
+    <Content Include="Assets\EntryIcons\C05_Edu_Languages.png" />
+    <Content Include="Assets\EntryIcons\C06_KCMDF.png" />
+    <Content Include="Assets\EntryIcons\C07_Kate.png" />
+    <Content Include="Assets\EntryIcons\C08_Socket.png" />
+    <Content Include="Assets\EntryIcons\C09_Identity.png" />
+    <Content Include="Assets\EntryIcons\C10_Kontact.png" />
+    <Content Include="Assets\EntryIcons\C11_Camera.png" />
+    <Content Include="Assets\EntryIcons\C12_IRKickFlash.png" />
+    <Content Include="Assets\EntryIcons\C13_KGPG_Key3.png" />
+    <Content Include="Assets\EntryIcons\C14_Laptop_Power.png" />
+    <Content Include="Assets\EntryIcons\C15_Scanner.png" />
+    <Content Include="Assets\EntryIcons\C16_Mozilla_Firebird.png" />
+    <Content Include="Assets\EntryIcons\C17_CDROM_Unmount.png" />
+    <Content Include="Assets\EntryIcons\C18_Display.png" />
+    <Content Include="Assets\EntryIcons\C19_Mail_Generic.png" />
+    <Content Include="Assets\EntryIcons\C20_Misc.png" />
+    <Content Include="Assets\EntryIcons\C21_KOrganizer.png" />
+    <Content Include="Assets\EntryIcons\C22_ASCII.png" />
+    <Content Include="Assets\EntryIcons\C23_Icons.png" />
+    <Content Include="Assets\EntryIcons\C24_Connect_Established.png" />
+    <Content Include="Assets\EntryIcons\C25_Folder_Mail.png" />
+    <Content Include="Assets\EntryIcons\C26_FileSave.png" />
+    <Content Include="Assets\EntryIcons\C27_NFS_Unmount.png" />
+    <Content Include="Assets\EntryIcons\C28_Message.png" />
+    <Content Include="Assets\EntryIcons\C29_KGPG_Term.png" />
+    <Content Include="Assets\EntryIcons\C30_Konsole.png" />
+    <Content Include="Assets\EntryIcons\C31_FilePrint.png" />
+    <Content Include="Assets\EntryIcons\C32_FSView.png" />
+    <Content Include="Assets\EntryIcons\C33_Run.png" />
+    <Content Include="Assets\EntryIcons\C34_Configure.png" />
+    <Content Include="Assets\EntryIcons\C35_KRFB.png" />
+    <Content Include="Assets\EntryIcons\C36_Ark.png" />
+    <Content Include="Assets\EntryIcons\C37_KPercentage.png" />
+    <Content Include="Assets\EntryIcons\C38_Samba_Unmount.png" />
+    <Content Include="Assets\EntryIcons\C39_History.png" />
+    <Content Include="Assets\EntryIcons\C40_Mail_Find.png" />
+    <Content Include="Assets\EntryIcons\C41_VectorGfx.png" />
+    <Content Include="Assets\EntryIcons\C42_KCMMemory.png" />
+    <Content Include="Assets\EntryIcons\C43_Trashcan_Full.png" />
+    <Content Include="Assets\EntryIcons\C44_KNotes.png" />
+    <Content Include="Assets\EntryIcons\C45_Cancel.png" />
+    <Content Include="Assets\EntryIcons\C46_Help.png" />
+    <Content Include="Assets\EntryIcons\C47_KPackage.png" />
+    <Content Include="Assets\EntryIcons\C48_Folder.png" />
+    <Content Include="Assets\EntryIcons\C49_Folder_Blue_Open.png" />
+    <Content Include="Assets\EntryIcons\C50_Folder_Tar.png" />
+    <Content Include="Assets\EntryIcons\C51_Decrypted.png" />
+    <Content Include="Assets\EntryIcons\C52_Encrypted.png" />
+    <Content Include="Assets\EntryIcons\C53_Apply.png" />
+    <Content Include="Assets\EntryIcons\C54_Signature.png" />
+    <Content Include="Assets\EntryIcons\C55_Thumbnail.png" />
+    <Content Include="Assets\EntryIcons\C56_KAddressBook.png" />
+    <Content Include="Assets\EntryIcons\C57_View_Text.png" />
+    <Content Include="Assets\EntryIcons\C58_KGPG.png" />
+    <Content Include="Assets\EntryIcons\C59_Package_Development.png" />
+    <Content Include="Assets\EntryIcons\C60_KFM_Home.png" />
+    <Content Include="Assets\EntryIcons\C61_Services.png" />
+    <Content Include="Assets\EntryIcons\C62_Tux.png" />
+    <Content Include="Assets\EntryIcons\C63_Feather.png" />
+    <Content Include="Assets\EntryIcons\C64_Apple.png" />
+    <Content Include="Assets\EntryIcons\C65_W.png" />
+    <Content Include="Assets\EntryIcons\C66_Money.png" />
+    <Content Include="Assets\EntryIcons\C67_Certificate.png" />
+    <Content Include="Assets\EntryIcons\C68_Smartphone.png" />
+    <Content Include="Assets\IconsSVG\1467656233_103.svg" />
+    <Content Include="Assets\IconsSVG\AboutLogo.png" />
+    <Content Include="Assets\IconsSVG\AboutLogoWhite.png" />
+    <Content Include="Assets\IconsSVG\NewStoreLogo.scale-100.png" />
+    <Content Include="Assets\IconsSVG\NewStoreLogo.scale-125.png" />
+    <Content Include="Assets\IconsSVG\NewStoreLogo.scale-150.png" />
+    <Content Include="Assets\IconsSVG\NewStoreLogo.scale-200.png" />
+    <Content Include="Assets\IconsSVG\NewStoreLogo.scale-400.png" />
+    <Content Include="Assets\IconsSVG\SplashScreen.scale-100.png" />
+    <Content Include="Assets\IconsSVG\SplashScreen.scale-125.png" />
+    <Content Include="Assets\IconsSVG\SplashScreen.scale-150.png" />
+    <Content Include="Assets\IconsSVG\SplashScreen.scale-200.png" />
+    <Content Include="Assets\IconsSVG\SplashScreen.scale-400.png" />
+    <Content Include="Assets\IconsSVG\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\IconsSVG\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\IconsSVG\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\IconsSVG\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\IconsSVG\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\IconsSVG\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\IconsSVG\Square310x310Logo.scale-125.png" />
+    <Content Include="Assets\IconsSVG\Square310x310Logo.scale-150.png" />
+    <Content Include="Assets\IconsSVG\Square310x310Logo.scale-200.png" />
+    <Content Include="Assets\IconsSVG\Square310x310Logo.scale-400.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-16_altform-unplated.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-256_altform-unplated.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-32_altform-unplated.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\IconsSVG\Square44x44Logo.targetsize-48_altform-unplated.png" />
+    <Content Include="Assets\IconsSVG\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\IconsSVG\Square71x71Logo.scale-125.png" />
+    <Content Include="Assets\IconsSVG\Square71x71Logo.scale-150.png" />
+    <Content Include="Assets\IconsSVG\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\IconsSVG\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\IconsSVG\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\IconsSVG\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\IconsSVG\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\IconsSVG\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\IconsSVG\Wide310x150Logo.scale-400.png" />
+    <Content Include="LICENSE.txt" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Views\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntryCollectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntryCollectionTreeViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EntryDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PasswordDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RootPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WelcomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinKeeLib\WinKeeLib.csproj">
+      <Project>{ea3f4fac-62fa-476d-9ab9-1b138dc12eb0}</Project>
+      <Name>WinKeeLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="WindowsMobile, Version=10.0.10586.0">
+      <Name>Windows Mobile Extensions for the UWP</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

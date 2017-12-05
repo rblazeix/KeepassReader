@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutPage_Title" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="About_Copyright.Text" xml:space="preserve">
+    <value>Copyright © 2017 Romain Blazeix</value>
+  </data>
+  <data name="About_Licenses1Content.Text" xml:space="preserve">
+    <value>Verwendet einen Teil des KeePass-Quellcodes für die Datenbank-Entschlüsselung, modifiziert von mar3ek für die WinKee-Anwendung, unter MPL-2.0-Lizenz</value>
+  </data>
+  <data name="About_Licenses1_1_HyperlinkButton.Content" xml:space="preserve">
+    <value>https://winkee.codeplex.com/license</value>
+  </data>
+  <data name="About_Licenses1_1_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>https://winkee.codeplex.com/license</value>
+  </data>
+  <data name="About_Licenses1_2_HyperlinkButton.Content" xml:space="preserve">
+    <value>http://keepass.info/help/v2/license.html</value>
+  </data>
+  <data name="About_Licenses1_2_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>http://keepass.info/help/v2/license.html</value>
+  </data>
+  <data name="About_Licenses2Content.Text" xml:space="preserve">
+    <value>Verwendet die Kryptographie-Bibliothek BouncyCastle, unter MIT-Lizenz</value>
+  </data>
+  <data name="About_Licenses2_HyperlinkButton.Content" xml:space="preserve">
+    <value>http://www.bouncycastle.org/csharp/licence.html</value>
+  </data>
+  <data name="About_Licenses2_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>http://www.bouncycastle.org/csharp/licence.html</value>
+  </data>
+  <data name="About_Licenses3Content.Text" xml:space="preserve">
+    <value>Anwendungs-Icon von WPZOOM, unter Creative-Commons-Lizenz</value>
+  </data>
+  <data name="About_Licenses3_HyperlinkButton.Content" xml:space="preserve">
+    <value>https://www.iconfinder.com/icons/111043/lock_open_icon#size=128</value>
+  </data>
+  <data name="About_Licenses3_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>https://www.iconfinder.com/icons/111043/lock_open_icon#size=128</value>
+  </data>
+  <data name="About_Licenses4Content.Text" xml:space="preserve">
+    <value>Icons für Datenbankeinträge aus dem Nuvola-Icon-Thema von David Vignoni, unter GNU-LGPL-Lizenz</value>
+  </data>
+  <data name="About_Licenses4_HyperlinkButton.Content" xml:space="preserve">
+    <value>http://keepass.info/help/base/credits.html#special</value>
+  </data>
+  <data name="About_Licenses4_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>http://keepass.info/help/base/credits.html#special</value>
+  </data>
+  <data name="About_LicensesTitle.Text" xml:space="preserve">
+    <value>Lizenzen und Würdigungen</value>
+  </data>
+  <data name="About_Title.Text" xml:space="preserve">
+    <value>KeePassReader</value>
+  </data>
+  <data name="About_TranslationsContent.Text" xml:space="preserve">
+    <value>Deutsche Lokalisierung durch Christian Seidel
+Türkische Lokalisierung durch Adem Budak
+Russisch Lokalisierung durch Evgeny Kolyaev</value>
+  </data>
+  <data name="DrawerMenu_About" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="DrawerMenu_Contact" xml:space="preserve">
+    <value>Entwickler kontaktieren</value>
+  </data>
+  <data name="DrawerMenu_LockDatabase" xml:space="preserve">
+    <value>Datenbank schließen</value>
+  </data>
+  <data name="DrawerMenu_NewFeatures" xml:space="preserve">
+    <value>Was ist neu</value>
+  </data>
+  <data name="DrawerMenu_Rate" xml:space="preserve">
+    <value>Diese App bewerten</value>
+  </data>
+  <data name="DrawerMenu_Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="EntryCollection_CopyPassword_MenuItem.Text" xml:space="preserve">
+    <value>Passwort kopieren</value>
+  </data>
+  <data name="EntryCollection_CopyUsername_MenuItem.Text" xml:space="preserve">
+    <value>Benutzernamen kopieren</value>
+  </data>
+  <data name="EntryCollection_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Suchen</value>
+  </data>
+  <data name="EntryCollection_ShowDetails_MenuItem.Text" xml:space="preserve">
+    <value>Details anzeigen</value>
+  </data>
+  <data name="EntryDetailPage_Title" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="EntryDetail_AppBarButton_Share.Label" xml:space="preserve">
+    <value>Teilen</value>
+  </data>
+  <data name="EntryDetail_Copy_Button.Content" xml:space="preserve">
+    <value>Kopieren</value>
+  </data>
+  <data name="EntryDetail_ModificationTime.Text" xml:space="preserve">
+    <value>Zeitpunkt der letzten Änderung</value>
+  </data>
+  <data name="EntryDetail_Notes.Text" xml:space="preserve">
+    <value>Kommentare</value>
+  </data>
+  <data name="EntryDetail_Password.Text" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="EntryDetail_ShowPassword_Button.Content" xml:space="preserve">
+    <value>Passwort anzeigen</value>
+  </data>
+  <data name="EntryDetail_URL.Text" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="EntryDetail_UserName.Text" xml:space="preserve">
+    <value>Benutzername</value>
+  </data>
+  <data name="MessageDialog_ErrorOpeningDatabase" xml:space="preserve">
+    <value>Fehler beim Öffnen der Datenbank</value>
+  </data>
+  <data name="MessageDialog_IncorrectKey" xml:space="preserve">
+    <value>Ungültiger Datenbankschlüssel</value>
+  </data>
+  <data name="NewFeatures_Dialog_Title" xml:space="preserve">
+    <value>Was ist neu</value>
+  </data>
+  <data name="PasswordDialogControl.PrimaryButtonText" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="PasswordDialogControl.SecondaryButtonText" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="PasswordDialogControl.Title" xml:space="preserve">
+    <value>Hauptschlüssel eingeben</value>
+  </data>
+  <data name="PasswordDialog_DatabaseName" xml:space="preserve">
+    <value>für {0}</value>
+  </data>
+  <data name="PasswordDialog_KeyFile_CheckBox.Content" xml:space="preserve">
+    <value>Schlüsseldatei</value>
+  </data>
+  <data name="PasswordDialog_MasterPassword_CheckBox.Content" xml:space="preserve">
+    <value>Hauptpasswort</value>
+  </data>
+  <data name="PasswordDialog_SelectKeyFile_Button.Content" xml:space="preserve">
+    <value>Eine Schlüsseldatei auswählen</value>
+  </data>
+  <data name="PasswordDialog_ShowPassword_Checkbox.Content" xml:space="preserve">
+    <value>Password anzeigen</value>
+  </data>
+  <data name="Root_ClipboardClear_Notification" xml:space="preserve">
+    <value>Zwischenablage löschen</value>
+  </data>
+  <data name="Root_ClipboardCopyPassword_Notification" xml:space="preserve">
+    <value>Passwort kopiert</value>
+  </data>
+  <data name="Root_ClipboardCopyUsername_Notification" xml:space="preserve">
+    <value>Benutzername kopiert</value>
+  </data>
+  <data name="Root_Title.Text" xml:space="preserve">
+    <value>KeepassReader</value>
+  </data>
+  <data name="SettingsPage_Title" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="Settings_AutoTimeLock.Text" xml:space="preserve">
+    <value>Datenbank automatisch sperren</value>
+  </data>
+  <data name="Settings_AutoTimeLock_Description.Text" xml:space="preserve">
+    <value>Sperrt die Datenbank automatisch nach 5 Minuten ohne Nutzung der App (im Hintergrund).</value>
+  </data>
+  <data name="Settings_ClearClipboard.Text" xml:space="preserve">
+    <value>Zwischenablage automatisch leeren</value>
+  </data>
+  <data name="Settings_ClearClipboard_Description.Text" xml:space="preserve">
+    <value>Löscht Benutzername oder Passwort automatisch nach Rückkehr zur Anwendung aus der Zwischenablage.</value>
+  </data>
+  <data name="Settings_Dark_Theme" xml:space="preserve">
+    <value>Dunkel</value>
+  </data>
+  <data name="Settings_Light_Theme" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="Settings_Security_Category.Text" xml:space="preserve">
+    <value>Sicherheit</value>
+  </data>
+  <data name="Settings_SortEntries.Text" xml:space="preserve">
+    <value>Listeneinträge sortieren</value>
+  </data>
+  <data name="Settings_SortEntries_Description.Text" xml:space="preserve">
+    <value>Das Ändern dieser Einstellung wird erst nach dem Neuladen der Datenbank wirksam.</value>
+  </data>
+  <data name="Settings_Theme.Text" xml:space="preserve">
+    <value>Anwendungsthema</value>
+  </data>
+  <data name="Settings_ViewCollectionAsTree.Text" xml:space="preserve">
+    <value>Ansicht als Baum darstellen</value>
+  </data>
+  <data name="Settings_ViewCollectionAsTree_Description.Text" xml:space="preserve">
+    <value>Ändert die Ansicht in eine hierarchische Baumdarstellung anstatt der flachen Listendarstellung. Die Datenbank muss neu geöffnet werden.</value>
+  </data>
+  <data name="Settings_Visual_Category.Text" xml:space="preserve">
+    <value>Anzeige</value>
+  </data>
+  <data name="Settings_WindowsHello.Text" xml:space="preserve">
+    <value>Windows Hello verwenden</value>
+  </data>
+  <data name="Settings_WindowsHello_Description.Text" xml:space="preserve">
+    <value>Nutzt Windows Hello zum sicheren Öffnen der Datenbank anstatt der regelmäßigen Passworteingabe. Windows Hello muss im System aktiviert sein.</value>
+  </data>
+  <data name="WelcomePage_Title" xml:space="preserve">
+    <value>KeepassReader</value>
+  </data>
+  <data name="Welcome_AutoOpen_Checkbox.Content" xml:space="preserve">
+    <value>Automatisches Öffnen beim Start</value>
+  </data>
+  <data name="Welcome_ReopenLastDatabase.Text" xml:space="preserve">
+    <value>Letzte Datenbank öffnen:</value>
+  </data>
+  <data name="Welcome_SelectDatabase_Button.Content" xml:space="preserve">
+    <value>Neue Datenbank auswählen</value>
+  </data>
+  <data name="Welcome_Subtitle.Text" xml:space="preserve">
+    <value>Bitte die zu nutzende Datenbank auswählen</value>
+  </data>
+  <data name="Welcome_Title.Text" xml:space="preserve">
+    <value>Wilkommen im KeePassReader</value>
+  </data>
+  <data name="Settings_RememberSelectedKeyFile.Text" xml:space="preserve">
+    <value>Ausgewählte Schlüsseldatei merken</value>
+  </data>
+  <data name="Settings_RememberSelectedKeyFile_Description.Text" xml:space="preserve">
+    <value>Merkt sich automatisch die Verwendung und den Pfad einer Schlüsseldatei zur Entsperrung der Datenbank</value>
+  </data>
+</root>

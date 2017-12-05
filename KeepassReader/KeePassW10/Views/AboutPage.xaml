@@ -1,0 +1,180 @@
+﻿<Page
+    x:Class="KeePassW10.Views.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KeePassW10.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <!-- Style to use for each license text section -->
+        <Style x:Key="LicenseTextBoxStyle" TargetType="TextBox">
+            <Setter Property="MinWidth" Value="{ThemeResource TextControlThemeMinWidth}"/>
+            <Setter Property="MinHeight" Value="{ThemeResource TextControlThemeMinHeight}"/>
+            <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+            <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundAltHighBrush}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource SystemControlForegroundChromeDisabledLowBrush}"/>
+            <Setter Property="SelectionHighlightColor" Value="{ThemeResource SystemControlHighlightAccentBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="Margin" Value="-10,0,0,5"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollMode" Value="Auto"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False"/>
+        </Style>
+        
+        <Style x:Key="LicenseLinkStyle" TargetType="HyperlinkButton">
+            <Setter Property="Foreground" Value="{ThemeResource SystemControlHyperlinkTextBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource HyperlinkButtonBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="0,0,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="UseSystemFocusVisuals" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="HyperlinkButton">
+                        <Grid x:Name="RootGrid">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHyperlinkBaseMediumBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseMediumLowBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledBaseMediumLowBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <ScrollViewer>
+
+            <RelativePanel Margin="10,0,10,0">
+
+                <!-- Logo and title -->
+                <Image x:Name="Logo" Grid.Row="0" Grid.Column="0" 
+                   Source="ms-appx:///Assets/IconsSVG/AboutLogo.png" 
+                   Stretch="UniformToFill"
+                   Width="100" Height="100"
+                   Margin="-10,10,0,0"
+                   RelativePanel.AlignTopWithPanel="True"
+                   RelativePanel.AlignLeftWithPanel="True"
+                   />
+
+                <StackPanel
+                Margin="0,10,0,0"
+                RelativePanel.RightOf="Logo" 
+                RelativePanel.AlignBottomWith="Logo"
+                RelativePanel.AlignTopWith="Logo"
+                VerticalAlignment="Center">
+
+                    <TextBlock  Grid.Row="0" Grid.Column="1" x:Uid="About_Title" Text="_WinKeePass" Style="{StaticResource SubheaderTextBlockStyle}" />
+                    <TextBlock  Grid.Row="0" Grid.Column="1" x:Uid="About_Copyright" Text="_Copyright © 2017 Romain Blazeix" Style="{StaticResource BodyTextBlockStyle}"  />
+                    <TextBlock x:Name="VersionText" Grid.Row="0" Grid.Column="1" Text="_v1.0" Style="{StaticResource BodyTextBlockStyle}"  />
+
+                </StackPanel>
+
+
+                <Border x:Name="border" BorderThickness="0.5" HorizontalAlignment="Stretch" BorderBrush="LightGray" Margin="0,20,0,20"
+                    RelativePanel.Below="Logo" 
+                    RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignRightWithPanel="True"
+                    />
+
+                <StackPanel Orientation="Vertical"    
+                    RelativePanel.Below="border" 
+                    RelativePanel.AlignLeftWithPanel="True"
+                    RelativePanel.AlignRightWithPanel="True"
+                    RelativePanel.AlignBottomWithPanel="True"
+                        >
+
+                    <!-- License Title -->
+                    <TextBlock x:Uid="About_LicensesTitle" Text="_Licenses and acknowledgments" Style="{StaticResource TitleTextBlockStyle}" Margin="0,0,0,10"/>
+                    
+                    <!-- License 1 -->
+                    <TextBox x:Uid="About_Licenses1Content" IsReadOnly="True" BorderThickness="0"
+                           Text="_Uses a portion of KeePass source code for database decryption, modified by mar3ek for the WinKee application, under MPL-2.0 License" 
+                           Style="{StaticResource LicenseTextBoxStyle}"
+                            />
+                    <HyperlinkButton x:Uid="About_Licenses1_1_HyperlinkButton" Style="{StaticResource LicenseLinkStyle}" Margin="0,-12,0,0" />
+                    <HyperlinkButton x:Uid="About_Licenses1_2_HyperlinkButton" Style="{StaticResource LicenseLinkStyle}" Margin="0,0,0,15" />
+
+
+                    <!-- License 2 -->
+                    <TextBox x:Uid="About_Licenses2Content" 
+                           Text="_Uses a portion of KeePass source code for database decryption, modified by mar3ek for the WinKee application, under MPL-2.0 License" 
+                           Style="{StaticResource LicenseTextBoxStyle}"
+                           TextWrapping="Wrap"/>
+                    <HyperlinkButton x:Uid="About_Licenses2_HyperlinkButton" Style="{StaticResource LicenseLinkStyle}" Margin="0,-12,0,15"/>
+
+
+                    <!-- License 3 -->
+                    <TextBox x:Uid="About_Licenses3Content" 
+                           Text="_Uses a portion of KeePass source code for database decryption, modified by mar3ek for the WinKee application, under MPL-2.0 License" 
+                           Style="{StaticResource LicenseTextBoxStyle}"
+                           TextWrapping="Wrap"/>
+                    <HyperlinkButton x:Uid="About_Licenses3_HyperlinkButton" Style="{StaticResource LicenseLinkStyle}" Margin="0,-12,0,15" />
+
+
+                    <!-- License 4 -->
+                    <TextBox x:Uid="About_Licenses4Content" 
+                           Text="_Uses a portion of KeePass source code for database decryption, modified by mar3ek for the WinKee application, under MPL-2.0 License" 
+                           Style="{StaticResource LicenseTextBoxStyle}"
+                           TextWrapping="Wrap"/>
+                    <HyperlinkButton x:Uid="About_Licenses4_HyperlinkButton" Style="{StaticResource LicenseLinkStyle}" Margin="0,-12,0,15"/>
+
+
+                    <!-- Translations -->
+                    <TextBox x:Uid="About_TranslationsContent" 
+                           Text="_German translation provided by Christian Seidel" 
+                           Style="{StaticResource LicenseTextBoxStyle}"
+                           TextWrapping="Wrap"/>
+
+                </StackPanel>
+
+
+            </RelativePanel>
+
+        </ScrollViewer>
+
+    </Grid>
+</Page>

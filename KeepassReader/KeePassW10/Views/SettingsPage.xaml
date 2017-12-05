@@ -1,0 +1,104 @@
+﻿<Page
+    x:Class="KeePassW10.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KeePassW10.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{StaticResource SettingsViewModel}"
+    mc:Ignorable="d"
+    >
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <ScrollViewer>
+
+        <StackPanel Orientation="Vertical" Margin="15,0,10,10">
+            
+            <!-- Visual category -->
+            <TextBlock x:Uid="Settings_Visual_Category" Text="_Visual" Style="{StaticResource SubheaderTextBlockStyle}"
+                    Margin="0,0,0,0"
+                    />
+
+            <!-- Theme selection -->
+            <TextBlock x:Uid="Settings_Theme" Text="_Thème" Style="{StaticResource SubtitleTextBlockStyle}"
+                       Margin="0,5,0,0"
+                      />
+            <ComboBox HorizontalAlignment="Left" MinWidth="100"
+                Margin="0,5,0,0"
+                ItemsSource="{Binding ThemeList}"
+                SelectedIndex="{Binding Path=SelectedThemeIndex, Mode=TwoWay}"
+            />
+
+            <!-- Tree view selection -->
+            <TextBlock x:Uid="Settings_ViewCollectionAsTree" Text="_view as tree" Style="{StaticResource SubtitleTextBlockStyle}"
+                    Margin="0,10,0,0" TextWrapping="Wrap"
+                    />
+                <ToggleSwitch x:Uid="Settings_ViewCollectionAsTree_Toggle" IsOn="{Binding Path=ViewCollectionAsTree, Mode=TwoWay}" />
+                <TextBlock x:Uid="Settings_ViewCollectionAsTree_Description" Text="_display as hierarchical tree" Style="{StaticResource BodyTextBlockStyle}"
+            Margin="0,0,0,0" TextWrapping="Wrap"
+            />
+
+                <!-- Sorting options -->
+            <TextBlock x:Uid="Settings_SortEntries" Text="_sorting" Style="{StaticResource SubtitleTextBlockStyle}"
+                       Margin="0,10,0,0" TextWrapping="Wrap"
+                      />
+            <ToggleSwitch x:Uid="Settings_SortEntries_Toggle" IsOn="{Binding Path=SortingEnabled, Mode=TwoWay}" />
+            <TextBlock x:Uid="Settings_SortEntries_Description" Text="_active at next load" Style="{StaticResource BodyTextBlockStyle}"
+                       Margin="0,0,0,0" TextWrapping="Wrap"
+                      />
+
+            <!-- Security category -->
+            <TextBlock x:Uid="Settings_Security_Category" Text="_Security" Style="{StaticResource SubheaderTextBlockStyle}"
+            Margin="0,12,0,0"
+            />
+            
+            <!-- Windows Hello options -->
+            <TextBlock x:Uid="Settings_WindowsHello" Text="_use Windows Hello" Style="{StaticResource SubtitleTextBlockStyle}"
+                Margin="0,10,0,0" TextWrapping="Wrap"
+                />
+            <ToggleSwitch IsOn="{Binding Path=WindowsHelloEnabled, Mode=TwoWay}" />
+            <TextBlock x:Uid="Settings_WindowsHello_Description" Text="_store credentials secured with Hello" Style="{StaticResource BodyTextBlockStyle}"
+                Margin="0,0,0,0" TextWrapping="Wrap"
+                />
+
+
+            <!-- Clipboard clear options-->
+            <TextBlock x:Uid="Settings_ClearClipboard" Text="_clipboard clear" Style="{StaticResource SubtitleTextBlockStyle}"
+                       Margin="0,10,0,0" TextWrapping="Wrap"
+                      />
+            <ToggleSwitch x:Uid="Settings_ClearClipboard_Toggle" IsOn="{Binding Path=ClearClipboardOnResumeEnabled, Mode=TwoWay}" />
+            <TextBlock x:Uid="Settings_ClearClipboard_Description" Text="_automatically clear clipboard when resuming application" Style="{StaticResource BodyTextBlockStyle}"
+                       Margin="0,0,0,0" TextWrapping="Wrap"
+                      />
+
+            <!-- Auto Database lock options-->
+            <TextBlock x:Uid="Settings_AutoTimeLock" Text="_auto database lock" Style="{StaticResource SubtitleTextBlockStyle}"
+                    Margin="0,10,0,0" TextWrapping="Wrap"
+                    />
+                <ToggleSwitch x:Uid="Settings_AutoTimeLock_Toggle" IsOn="{Binding Path=AutoDatabaseTimeLockEnabled, Mode=TwoWay}" />
+                <TextBlock x:Uid="Settings_AutoTimeLock_Description" Text="_automatically lock the database after 5 minutes without using the app" Style="{StaticResource BodyTextBlockStyle}"
+                    Margin="0,0,0,0" TextWrapping="Wrap"
+                    />
+
+            <!-- Remember selected keyfile options-->
+            <TextBlock x:Uid="Settings_RememberSelectedKeyFile" Text="_remember selected key file" Style="{StaticResource SubtitleTextBlockStyle}"
+                    Margin="0,10,0,0" TextWrapping="Wrap"
+                    />
+            <ToggleSwitch x:Uid="Settings_RememberSelectedKeyFile_Toggle" IsOn="{Binding Path=RememberLastSelectedKeyFile, Mode=TwoWay}" />
+            <TextBlock x:Uid="Settings_RememberSelectedKeyFile_Description" Text="_automatically lock the database after 5 minutes without using the app" Style="{StaticResource BodyTextBlockStyle}"
+                    Margin="0,0,0,0" TextWrapping="Wrap"
+                    />
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Grid>
+</Page>

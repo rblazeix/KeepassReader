@@ -1,0 +1,130 @@
+﻿<Page
+    x:Class="KeePassW10.Views.EntryCollectionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KeePassW10.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{StaticResource DatabaseViewModel}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <!-- List of password entries -->
+        <CollectionViewSource x:Name="EntriesCollection" 
+                              Source="{Binding FilteredGroupedEntries}"
+                              IsSourceGrouped="True"
+                              ItemsPath="FilteredEntries"/>
+
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <AutoSuggestBox Grid.Row="0" 
+                        x:Name="EntryCollection_SearchBox"
+                        x:Uid="EntryCollection_SearchBox"
+                        PlaceholderText="_Search"
+                        TextChanged="AutoSuggestBox_TextChanged"
+                        Margin="10,1,10,1"
+                        >
+            <AutoSuggestBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" />
+                </DataTemplate>
+            </AutoSuggestBox.ItemTemplate>
+        </AutoSuggestBox>
+
+        <SemanticZoom x:Name="CollectionSemanticZoom" Grid.Row="1">
+            <SemanticZoom.ZoomedInView>
+                <ListView ItemsSource="{Binding Source={StaticResource EntriesCollection}}" 
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                  SelectionMode="None"
+                  MaxWidth="600"
+                >
+                    <ListView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" />
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListView.GroupStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="{ThemeResource CollectionListBackgroundBrush}"
+                                    RightTapped="EntryList_RightTapped"
+                                    >
+                                <Button.Content>
+                                    <Grid HorizontalAlignment="Left" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="{Binding Icon}" Width="20" Height="20"
+                                               HorizontalAlignment="Left" 
+                                               VerticalAlignment="Center"
+                                               Margin="10,5,10,5"/>
+
+                                        <TextBlock x:Name="EntryName" Grid.Row="0" Grid.Column="1" Text="{Binding Title}" 
+                                                   Margin="5,0,10,0"
+                                                   TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
+                                                   TextAlignment="Left"/>
+                                        <TextBlock x:Name="EntryUserName" Grid.Row="1" Grid.Column="1" Text="{Binding Username}" 
+                                                   Style="{StaticResource CaptionTextBlockStyle}"
+                                                   TextTrimming="CharacterEllipsis" TextWrapping="NoWrap"
+                                                   Foreground="Gray"
+                                                   Margin="5,0,10,0"
+                                                   TextAlignment="Left"/>
+                                    </Grid>
+                                </Button.Content>
+                                <Button.Flyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem x:Uid="EntryCollection_CopyUsername_MenuItem" Text="_Copy username" Command="{Binding CopyUsernameCommand}"/>
+                                        <MenuFlyoutItem x:Uid="EntryCollection_CopyPassword_MenuItem" Text="_Copy password" Command="{Binding CopyPasswordCommand}"/>
+                                        <MenuFlyoutSeparator/>
+                                        <MenuFlyoutItem x:Uid="EntryCollection_ShowDetails_MenuItem" Text="_Show details" Click="MenuFlyoutItem_ShowDetails_Click"/>
+                                    </MenuFlyout>
+                                </Button.Flyout>
+                            </Button>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                            <Setter Property="Margin" Value="0,2,0,2" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                </ListView>
+            </SemanticZoom.ZoomedInView>
+
+            <SemanticZoom.ZoomedOutView>
+                <ListView 
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                  SelectionMode="None"
+                  MaxWidth="600"
+                >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Group.Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </SemanticZoom.ZoomedOutView>
+        </SemanticZoom>
+
+    </Grid>
+</Page>

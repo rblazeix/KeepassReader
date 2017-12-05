@@ -1,0 +1,39 @@
+﻿<Application
+    x:Class="KeePassW10.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KeePassW10"
+    xmlns:vm="using:KeePassW10.ViewModels"
+    RequestedTheme="Light"
+    >
+
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <!-- Builds the unique DatabaseViewModel instance as a resource, so that it can be accesssed from anywhere -->
+            <vm:DatabaseViewModel x:Key="DatabaseViewModel" />
+            <vm:SettingsViewModel x:Key="SettingsViewModel" />
+            <vm:ClipboardViewModel x:Key="ClipboardViewModel" />
+
+            <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <local:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
+
+            <!-- Theme colors -->
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Dark">
+                    <Brush x:Key="CollectionListBackgroundBrush">Black</Brush>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <Brush x:Key="CollectionListBackgroundBrush">White</Brush>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="HighContrast">
+                    <Brush x:Key="CollectionListBackgroundBrush">Black</Brush>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+
+        </ResourceDictionary>
+        
+    </Application.Resources>
+    
+</Application>

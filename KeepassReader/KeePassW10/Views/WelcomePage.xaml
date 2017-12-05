@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="KeePassW10.Views.WelcomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KeePassW10.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{StaticResource DatabaseViewModel}"
+    mc:Ignorable="d">
+
+    
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <TextBlock HorizontalAlignment="Center" Margin="0,20,0,30" 
+                       Style="{StaticResource HeaderTextBlockStyle}"
+                       x:Uid="Welcome_Title"
+                       TextWrapping="Wrap" Text="_Welcome to KeePassReader" VerticalAlignment="Top" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0,10,0,30" TextWrapping="Wrap" 
+                       Style="{StaticResource SubtitleTextBlockStyle}"
+                       x:Uid="Welcome_Subtitle"
+                       Text="_Please select the database to use" VerticalAlignment="Top"
+                       TextAlignment="Center"
+                       />
+
+            <StackPanel Orientation="Horizontal" Visibility="{Binding Path=IsLastDatabaseAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                <TextBlock x:Uid="Welcome_ReopenLastDatabase" Text="_Reopen last database:" Margin="0,10,10,10"   />
+                <HyperlinkButton BorderThickness="0" Margin="0,0,0,0" VerticalContentAlignment="Top"
+                             Click="PreviousDatabaseButton_Click" Content="{Binding LastDatabaseName}"
+                             IsEnabled="{Binding Path=IsLoading, Converter={StaticResource NegateBooleanConverter}}"
+                              />
+            </StackPanel>
+
+
+            <Button HorizontalAlignment="Stretch" Margin="0,10,0,10" 
+                    Background="Transparent" BorderThickness="1" BorderBrush="{ThemeResource ButtonBorderThemeBrush}" 
+                    x:Uid="Welcome_SelectDatabase_Button"
+                    Content="_Select new database"
+                    Click="OpenDatabaseButton_Click"
+                    IsEnabled="{Binding Path=IsLoading, Converter={StaticResource NegateBooleanConverter}}"
+                    />
+
+            <CheckBox Content="_Automatically open selected database" 
+                      x:Uid="Welcome_AutoOpen_Checkbox"
+                      Margin="0,10,0,0"
+                      IsEnabled="{Binding Path=IsLoading, Converter={StaticResource NegateBooleanConverter}}"
+                      IsChecked="{Binding Path=AutomaticallyOpenLastDatabase, Mode=TwoWay}"
+                      />
+
+            <ProgressRing HorizontalAlignment="Center" Width="70" Height="70" Margin="0,20,0,0" IsActive="{Binding IsLoading}" />
+
+        </StackPanel>
+
+    </Grid>
+</Page>

@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutPage_Title" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="About_Copyright.Text" xml:space="preserve">
+    <value>Copyright © 2017 Romain Blazeix</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses1Content.Text" xml:space="preserve">
+    <value>Использована часть исходного кода KeePass для расшифровки базы паролей в модификации mar3ek для приложения WinKee. Mozilla Public License 2.0</value>
+  </data>
+  <data name="About_Licenses1_1_HyperlinkButton.Content" xml:space="preserve">
+    <value>https://winkee.codeplex.com/license</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses1_1_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>https://winkee.codeplex.com/license</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses1_2_HyperlinkButton.Content" xml:space="preserve">
+    <value>http://keepass.info/help/v2/license.html</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses1_2_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>http://keepass.info/help/v2/license.html</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses2Content.Text" xml:space="preserve">
+    <value>Использована библиотека шифрования BouncyCastle. Лицензия MIT.</value>
+  </data>
+  <data name="About_Licenses2_HyperlinkButton.Content" xml:space="preserve">
+    <value>http://www.bouncycastle.org/csharp/licence.html</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses2_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>http://www.bouncycastle.org/csharp/licence.html</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses3Content.Text" xml:space="preserve">
+    <value>Иконка приложения. Автор WPZOOM. Лицензия Creative Commons.</value>
+  </data>
+  <data name="About_Licenses3_HyperlinkButton.Content" xml:space="preserve">
+    <value>https://www.iconfinder.com/icons/111043/lock_open_icon#size=128</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses3_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>https://www.iconfinder.com/icons/111043/lock_open_icon#size=128</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses4Content.Text" xml:space="preserve">
+    <value>Иконка записи базы паролей из Nuvola Icon Theme. Автор David Vignoni. Лицензия GNU LGPL.</value>
+  </data>
+  <data name="About_Licenses4_HyperlinkButton.Content" xml:space="preserve">
+    <value>http://keepass.info/help/base/credits.html#special</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_Licenses4_HyperlinkButton.NavigateUri" xml:space="preserve">
+    <value>http://keepass.info/help/base/credits.html#special</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_LicensesTitle.Text" xml:space="preserve">
+    <value>Лицензии и благодарности</value>
+  </data>
+  <data name="About_Title.Text" xml:space="preserve">
+    <value>KeePassReader</value>
+    <comment>Should not be translated</comment>
+  </data>
+  <data name="About_TranslationsContent.Text" xml:space="preserve">
+    <value>Немецкая локализация - Christian Seidel
+русская локализация - Evgeny Kolyaev
+Турецкая локализация - Adem Budak</value>
+  </data>
+  <data name="DrawerMenu_About" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="DrawerMenu_Contact" xml:space="preserve">
+    <value>Связаться с разработчиком</value>
+  </data>
+  <data name="DrawerMenu_LockDatabase" xml:space="preserve">
+    <value>Закрыть базу</value>
+  </data>
+  <data name="DrawerMenu_NewFeatures" xml:space="preserve">
+    <value>Что нового</value>
+  </data>
+  <data name="DrawerMenu_Rate" xml:space="preserve">
+    <value>Оценить приложение</value>
+  </data>
+  <data name="DrawerMenu_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="EntryCollection_CopyPassword_MenuItem.Text" xml:space="preserve">
+    <value>Копировать пароль</value>
+  </data>
+  <data name="EntryCollection_CopyUsername_MenuItem.Text" xml:space="preserve">
+    <value>Копировать логин</value>
+  </data>
+  <data name="EntryCollection_SearchBox.PlaceholderText" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="EntryCollection_ShowDetails_MenuItem.Text" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="EntryDetailPage_Title" xml:space="preserve">
+    <value>Просмотр записи</value>
+  </data>
+  <data name="EntryDetail_AppBarButton_Share.Label" xml:space="preserve">
+    <value>Поделиться</value>
+  </data>
+  <data name="EntryDetail_Copy_Button.Content" xml:space="preserve">
+    <value>Копировать</value>
+  </data>
+  <data name="EntryDetail_ModificationTime.Text" xml:space="preserve">
+    <value>Время последнего изменения</value>
+  </data>
+  <data name="EntryDetail_Notes.Text" xml:space="preserve">
+    <value>Коментарий</value>
+  </data>
+  <data name="EntryDetail_Password.Text" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="EntryDetail_ShowPassword_Button.Content" xml:space="preserve">
+    <value>Показывать пароль</value>
+  </data>
+  <data name="EntryDetail_URL.Text" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="EntryDetail_UserName.Text" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="MessageDialog_ErrorOpeningDatabase" xml:space="preserve">
+    <value>Не удалось открыть базу паролей</value>
+  </data>
+  <data name="MessageDialog_IncorrectKey" xml:space="preserve">
+    <value>Неверный пароль</value>
+  </data>
+  <data name="NewFeatures_Dialog_Title" xml:space="preserve">
+    <value>Что нового?</value>
+  </data>
+  <data name="PasswordDialogControl.PrimaryButtonText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PasswordDialogControl.SecondaryButtonText" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="PasswordDialogControl.Title" xml:space="preserve">
+    <value>Введите основной пароль</value>
+  </data>
+  <data name="PasswordDialog_DatabaseName" xml:space="preserve">
+    <value>для {0}</value>
+  </data>
+  <data name="PasswordDialog_KeyFile_CheckBox.Content" xml:space="preserve">
+    <value>Ключевой файл</value>
+  </data>
+  <data name="PasswordDialog_MasterPassword_CheckBox.Content" xml:space="preserve">
+    <value>Основной пароль</value>
+  </data>
+  <data name="PasswordDialog_SelectKeyFile_Button.Content" xml:space="preserve">
+    <value>Выбрать ключевой файл</value>
+    <comment>This is not an accurate translation. But it is translation used in desktop version of KeePass.</comment>
+  </data>
+  <data name="PasswordDialog_ShowPassword_Checkbox.Content" xml:space="preserve">
+    <value>Показывать пароль</value>
+  </data>
+  <data name="Root_ClipboardClear_Notification" xml:space="preserve">
+    <value>Буфер обмена очищен</value>
+  </data>
+  <data name="Root_ClipboardCopyPassword_Notification" xml:space="preserve">
+    <value>Пароль скопирован</value>
+  </data>
+  <data name="Root_ClipboardCopyUsername_Notification" xml:space="preserve">
+    <value>Логин скопирован</value>
+  </data>
+  <data name="Root_Title.Text" xml:space="preserve">
+    <value>KeepassReader</value>
+    <comment>Maybe KeePassReader?</comment>
+  </data>
+  <data name="SettingsPage_Title" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Settings_AutoTimeLock.Text" xml:space="preserve">
+    <value>Автоматическая блокировка базы паролей</value>
+  </data>
+  <data name="Settings_AutoTimeLock_Description.Text" xml:space="preserve">
+    <value>Автоматически блокировать базу паролей после 5 минут бездействия (работы приложения в фоне)</value>
+  </data>
+  <data name="Settings_ClearClipboard.Text" xml:space="preserve">
+    <value>Автоочистка буфера обмена</value>
+  </data>
+  <data name="Settings_ClearClipboard_Description.Text" xml:space="preserve">
+    <value>Очищать буфер обмена, когда Вы возвращаетесь в приложение после вставки скопированных данных</value>
+  </data>
+  <data name="Settings_Dark_Theme" xml:space="preserve">
+    <value>Тёмная</value>
+  </data>
+  <data name="Settings_Light_Theme" xml:space="preserve">
+    <value>Светлая</value>
+  </data>
+  <data name="Settings_Security_Category.Text" xml:space="preserve">
+    <value>Безопасность</value>
+  </data>
+  <data name="Settings_SortEntries.Text" xml:space="preserve">
+    <value>Сортировать записи по возрастанию</value>
+  </data>
+  <data name="Settings_SortEntries_Description.Text" xml:space="preserve">
+    <value>Изменения будут применены только после переоткрытия базы паролей</value>
+  </data>
+  <data name="Settings_Theme.Text" xml:space="preserve">
+    <value>Выбор темы</value>
+  </data>
+  <data name="Settings_ViewCollectionAsTree.Text" xml:space="preserve">
+    <value>Показывать дерево групп записей</value>
+  </data>
+  <data name="Settings_ViewCollectionAsTree_Description.Text" xml:space="preserve">
+    <value>Показывать боковую панель с группами записей вместо отображения всех записей в одном списке. Изменения вступят в силу после переоткрытия базы паролей.</value>
+  </data>
+  <data name="Settings_Visual_Category.Text" xml:space="preserve">
+    <value>Внешний вид</value>
+  </data>
+  <data name="Settings_WindowsHello.Text" xml:space="preserve">
+    <value>Использовать Windows Hello / ПИН-код</value>
+  </data>
+  <data name="Settings_WindowsHello_Description.Text" xml:space="preserve">
+    <value>Использовать Windows Hello для открытия базы паролей вместо основного пароля базы. Использование Windows Hello должно быть включено в настройках системы.</value>
+  </data>
+  <data name="WelcomePage_Title" xml:space="preserve">
+    <value>KeepassReader</value>
+    <comment>Maybe KeePassReader?</comment>
+  </data>
+  <data name="Welcome_AutoOpen_Checkbox.Content" xml:space="preserve">
+    <value>Открывать при старте приложения</value>
+  </data>
+  <data name="Welcome_ReopenLastDatabase.Text" xml:space="preserve">
+    <value>Последня база паролей</value>
+  </data>
+  <data name="Welcome_SelectDatabase_Button.Content" xml:space="preserve">
+    <value>Открыть новый файл</value>
+  </data>
+  <data name="Welcome_Subtitle.Text" xml:space="preserve">
+    <value>Выберите базу паролей</value>
+  </data>
+  <data name="Welcome_Title.Text" xml:space="preserve">
+    <value>Добро пожаловать в KeePassReader</value>
+  </data>
+  <data name="Settings_RememberSelectedKeyFile.Text" xml:space="preserve">
+    <value>Запомнить выбранный ключевой файл</value>
+  </data>
+  <data name="Settings_RememberSelectedKeyFile_Description.Text" xml:space="preserve">
+    <value>Автоматически запоминать расположение ключевого файла для разблокировки базы</value>
+  </data>
+</root>
